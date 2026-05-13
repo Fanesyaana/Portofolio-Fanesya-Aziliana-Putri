@@ -1,18 +1,21 @@
-// Navbar Scroll Effect
+// ===== Navbar Scroll Effect =====
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 40);
 });
 
-// Mobile Menu Toggle
+// ===== Mobile Menu Toggle =====
 const navToggle = document.getElementById('navToggle');
 const mobileMenu = document.getElementById('mobileMenu');
-navToggle.addEventListener('click', () => mobileMenu.classList.toggle('show'));
+navToggle.addEventListener('click', () => {
+  navToggle.classList.toggle('active');
+  mobileMenu.classList.toggle('show');
+});
 document.querySelectorAll('.mobile-menu .nav-link').forEach(link => {
   link.addEventListener('click', () => mobileMenu.classList.remove('show'));
 });
 
-// Active Link & Smooth Scroll
+// ===== Active Link & Smooth Scroll =====
 document.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', function(e) {
     e.preventDefault();
@@ -23,7 +26,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
   });
 });
 
-// Auto Active on Scroll
+// ===== Auto Active on Scroll =====
 const sections = document.querySelectorAll('section[id]');
 window.addEventListener('scroll', () => {
   let current = '';
@@ -36,34 +39,91 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// Skill Progress Animation dengan Percentage
 document.addEventListener('DOMContentLoaded', function() {
-  const skillSection = document.querySelector('.skill-section');
-  if (!skillSection) return;
+  const nameEl = document.getElementById('typewriter');
+  const roleEl = document.getElementById('typewriter-role');
+  const fullName = "Fanesya Aziliana putri";
+  
+  // === FUNGSI TYPING MULTI BARIS (Teks awal tidak hilang) ===
+  function typeMultiLine(element, lines, speed = 50) {
+    element.innerHTML = ''; // Mulai kosong hanya sekali
+    let lineIdx = 0;
+    let charIdx = 0;
 
-  function animateSkills() {
-    const skillBars = skillSection.querySelectorAll('.skill-bar');
-    skillBars.forEach((bar, index) => {
-      const progress = bar.getAttribute('data-progress');
-      setTimeout(() => {
-        bar.style.width = progress + '%';
-      }, index * 150);
-    });
+    function typeNext() {
+      if (lineIdx < lines.length) {
+        if (charIdx < lines[lineIdx].length) {
+          // Ketik karakter per karakter
+          element.innerHTML += lines[lineIdx].charAt(charIdx);
+          charIdx++;
+          setTimeout(typeNext, speed);
+        } else {
+          // Selesai 1 baris
+          if (lineIdx < lines.length - 1) {
+            element.innerHTML += '<br>'; // Tambah baris baru
+          }
+          lineIdx++;
+          charIdx = 0;
+          setTimeout(typeNext, 350); // Jeda sebelum lanjut baris bawah
+        }
+      }
+    }
+    typeNext();
   }
 
-  // Jalanin pas section keliatan
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        setTimeout(animateSkills, 300);
-        observer.unobserve(entry.target);
+  // === 1. KETIK NAMA DULU ===
+  function typeName() {
+    let i = 0;
+    nameEl.innerHTML = '';
+    function type() {
+      if (i < fullName.length) {
+        nameEl.innerHTML += fullName.charAt(i);
+        i++;
+        setTimeout(type, 80);
+      } else {
+        // Setelah nama selesai, lanjut ketik role
+        setTimeout(typeRole, 500);
       }
-    });
-  }, { threshold: 0.3 });
+    }
+    type();
+  }
 
-  observer.observe(skillSection);
+  // === 2. KETIK ROLE (2 BARIS, TETAP DI ATAS) ===
+  function typeRole() {
+    const roleLines = [
+      "Computer Science Student &",
+      "Creative Developer"
+    ];
+    typeMultiLine(roleEl, roleLines, 55);
+  }
+
+  // Mulai animasi saat halaman siap
+  setTimeout(typeName, 600);
+
+  // ===== SKILL PROGRESS (Tetap sama) =====
+  const skillSection = document.querySelector('.skill-section');
+  if (skillSection) {
+    function animateSkills() {
+      const skillBars = skillSection.querySelectorAll('.skill-bar');
+      skillBars.forEach((bar, index) => {
+        const progress = bar.getAttribute('data-progress');
+        setTimeout(() => { bar.style.width = progress + '%'; }, index * 150);
+      });
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(animateSkills, 300);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    observer.observe(skillSection);
+  }
 });
-// Contact Form
+
+
+// ===== Contact Form =====
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
@@ -81,14 +141,8 @@ if (contactForm) {
   });
 }
 
-// Init
-window.addEventListener('load', () => {
-  if (window.scrollY > 40) navbar.classList.add('scrolled');
-});
-
-// Back to Top Button
+// ===== Back to Top Button =====
 const backToTopBtn = document.getElementById('backToTop');
-
 window.addEventListener('scroll', () => {
   if (window.pageYOffset > 300) {
     backToTopBtn.classList.add('show');
@@ -96,10 +150,11 @@ window.addEventListener('scroll', () => {
     backToTopBtn.classList.remove('show');
   }
 });
-
 backToTopBtn.addEventListener('click', () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// ===== Init =====
+window.addEventListener('load', () => {
+  if (window.scrollY > 40) navbar.classList.add('scrolled');
 });
