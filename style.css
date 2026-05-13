@@ -47,7 +47,7 @@ img {
   display: block;
 }
 
-/* NAVBAR */
+/* ===== NAVBAR ===== */
 .navbar-pil { 
   position: fixed;
   top: 24px; left: 0; right: 0; z-index: 1000; transition: var(--transition);
@@ -182,7 +182,7 @@ img {
   border-radius: 14px;
 }
 
-/* HERO - BIRU */
+/* ===== HERO ===== */
 .hero-section { 
   padding: 120px 0 60px;
   background: linear-gradient(180deg, #BAE6FD 0%, #93C5FD 100%);
@@ -198,21 +198,40 @@ img {
   margin-bottom: 8px;
   line-height: 1.2;
 }
-  
+
+/* Typing Effect Styles */
 .hero-name { 
   font-size: 32px;
   font-weight: 800; 
   color: var(--primary-blue); 
   margin-bottom: 14px; 
   line-height: 1.2;
+  min-height: 45px;
 }
-  
-.hero-role { 
+
+#typewriter {
+  border-right: none;
+}
+
+.cursor {
+  display: inline-block;
+  color: var(--primary-blue);
+  animation: blink 1s infinite;
+  font-weight: 800;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+#typewriter-role {
   font-size: 17px; 
   font-weight: 600; 
   color: var(--text-dark);
   margin-bottom: 16px;
-  line-height: 1.5; 
+  line-height: 1.5;
+  min-height: 50px;
 }
 
 .hero-desc { 
@@ -323,12 +342,27 @@ img {
   margin: 0; 
   font-weight: 500;
 }
-  
+
+/* ===== Floating Image Animation ===== */
 .hero-image-wrap { 
   position: relative;
   width: 100%; 
   max-width: 440px;
   margin-left: auto;
+}
+
+/* Floating animation for photo */
+.hero-image-wrap.floating {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
 }
   
 .img-bg-shape { 
@@ -363,7 +397,26 @@ img {
   box-shadow: 0 15px 50px rgba(0,0,0,0.12);
 }
 
-/* ABOUT - BIRU MUDA */
+/* Styling untuk role text 2 baris */
+#typewriter-role {
+  font-size: 17px; 
+  font-weight: 600; 
+  color: var(--text-dark);
+  margin-bottom: 16px;
+  line-height: 1.4;  /* Jarak antar baris lebih rapat */
+  min-height: 50px;  /* Pastikan ruang cukup untuk 2 baris */
+}
+
+#typewriter-role {
+  font-size: 17px; 
+  font-weight: 600; 
+  color: var(--text-dark);
+  margin-bottom: 16px;
+  line-height: 1.35;          /* Jarak antar baris rapi */
+  min-height: 2.7em;          /* Cadangkan ruang untuk 2 baris */
+  white-space: normal;        /* Izinkan text wrapping */
+}
+/* ===== ABOUT ===== */
 .about-section { 
   padding: 60px 20px; 
   background: linear-gradient(180deg, #93C5FD 0%, #DBEAFE 100%);
@@ -464,7 +517,7 @@ img {
   color: var(--text-gray);
 }
 
-/* SKILL - BIRU MUDA BANGET HAMPIR PUTIH */
+/* ===== SKILL ===== */
 .skill-section {
   background: linear-gradient(180deg, #DBEAFE 0%, #EFF6FF 100%);
   padding: 60px 20px 80px;
@@ -490,7 +543,7 @@ img {
   background: linear-gradient(135deg, #E0F2FE 0%, #B8D9FF 100%);
   border-radius: 24px;
   padding: 60px 60px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  box-shadow: var(--shadow);
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -546,7 +599,7 @@ img {
   z-index: 2;
 }
 
-/* PROJECT - PUTIH KE ABU MUDA - MULAI GRADASI */
+/* ===== PROJECT ===== */
 .project-section { 
   padding: 90px 0 0; 
   background: linear-gradient(180deg, #EFF6FF 0%, #F1F5F9 100%);
@@ -628,7 +681,7 @@ img {
   margin: 0; 
 }
 
-/* CONTACT */
+/* ===== CONTACT ===== */
 .contact-section {
   padding: 90px 0; 
   background: linear-gradient(180deg, #F1F5F9 0%, #94A3B8 100%); 
@@ -727,7 +780,7 @@ img {
   background: rgba(255,255,255,0.25);
 }
 
-/* FOOTER - ABU TUA KE HITAM */
+/* ===== FOOTER ===== */
 .footer-section { 
   background: linear-gradient(180deg, #64748B 0%, #1E293B 50%, #0F172A 100%); 
   padding: 60px 0 28px; 
@@ -810,7 +863,7 @@ img {
   font-size: 12px; 
 }
 
-/* RESPONSIVE */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 991px) {
   .nav-menu, .nav-actions {
     display: none; 
@@ -940,22 +993,7 @@ img {
   }
 }
 
-@keyframes fadeInUp { 
-  from { 
-    opacity: 0; 
-    transform: translateY(24px); 
-  } 
-  to { 
-    opacity: 1; 
-    transform: translateY(0); 
-  } 
-}
-
-.hero-section { 
-  animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards; 
-}
-
-/* BACK TO TOP BUTTON */
+/* ===== BACK TO TOP ===== */
 .back-to-top {
   position: fixed;
   bottom: 30px;
@@ -986,10 +1024,8 @@ img {
 .back-to-top:hover {
   background: var(--dark-blue);
   transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(0, 9, 235, 0.4);
 }
 
-/* Mobile */
 @media (max-width: 576px) {
   .back-to-top {
     bottom: 20px;
