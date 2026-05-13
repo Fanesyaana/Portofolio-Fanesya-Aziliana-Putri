@@ -35,7 +35,7 @@
         <a class="nav-link" href="#skill">Skill</a>
         <a class="nav-link" href="#project">Project</a>
         <a class="nav-link" href="#contact">Contact</a>
-        <a href="CV fanesya.pdf" class="btn-cv d-block text-center mt-3">Download CV<i class=" bi bi-download"></i></a>
+        <a href="CV fanesya.pdf" class="btn-cv d-block text-center mt-3">Download CV<i class="bi bi-download"></i></a>
       </div>
     </div>
   </nav>
@@ -46,8 +46,9 @@
       <div class="row align-items-center">
         <div class="col-lg-6 order-2 order-lg-1">
           <h1 class="hero-greet">Hello, I am</h1>
-          <h2 class="hero-name">Fanesya Aziliana putri</h2>
-          <h3 class="hero-role">Computer Science Student &<br>Creative Developer</h3>
+          <!-- Typing effect container -->
+          <h2 class="hero-name"><span id="typewriter"></span><span class="cursor">|</span></h2>
+          <h3 class="hero-role" id="typewriter-role"></h3>
           <p class="hero-desc">I'm a creative developer who learning to be better than yesterday. I love building digital experiences that are useful, functional, and aesthetic.</p>
           <div class="hero-buttons">
             <a href="#contact" class="btn-primary">Let's work together</a>
@@ -67,7 +68,8 @@
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2">
-          <div class="hero-image-wrap">
+          <!-- Floating image wrapper -->
+          <div class="hero-image-wrap floating">
             <div class="img-bg-shape"></div>
             <div class="img-border-shape"></div>
             <img src="fanesya.jpg" alt="Fanesya" class="hero-img">
@@ -89,8 +91,8 @@
             <span class="about-badge">About Me</span>
             <p class="about-text">I'm a beginner web developer who loves turning ideas into simple and aesthetic digital experiences.</p>
             <p class="about-text">I have experience working with HTML, CSS and basic Javascript.</p>
-          <a href="https://docs.google.com/document/d/17al4jPJu5i_Ndu0OaIKjX6HsNkjJbqdZRL-NrSDWD_I/edit?usp=drivesdk" target="_blank" class="btn-about">
-          More About Me
+            <a href="https://docs.google.com/document/d/17al4jPJu5i_Ndu0OaIKjX6HsNkjJbqdZRL-NrSDWD_I/edit?usp=drivesdk" target="_blank" class="btn-about">
+              More About Me
             </a>
           </div>
           <div class="col-lg-4">
@@ -106,97 +108,97 @@
     </div>
   </section>
 
-<!-- SKILL -->
-<section class="skill-section" id="skill">
-  <div class="container">
-    <h2 class="section-title"><span>💼</span> My skill</h2>
-    <p class="section-subtitle">expertise in modern web technologies<br>and design tools, constantin learning<br>and evolving</p>
-    
-    <div class="skill-card">
-      <div class="row g-4 justify-content-center">
-        
-        <div class="col-md-4 col-sm-6">
-          <div class="skill-item">
-            <div class="skill-header">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
-              <span class="skill-name">HTML</span>
-            </div>
-            <div class="skill-progress">
-              <div class="skill-bar" data-progress="70"></div>
-              <span class="progress-text">70%</span> <!-- Di luar bar, di track putih -->
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 col-sm-6">
-          <div class="skill-item">
-            <div class="skill-header">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS">
-              <span class="skill-name">Javascript</span>
-            </div>
-            <div class="skill-progress">
-              <div class="skill-bar" data-progress="20"></div>
-              <span class="progress-text">20%</span>
+  <!-- SKILL -->
+  <section class="skill-section" id="skill">
+    <div class="container">
+      <h2 class="section-title"><span>💼</span> My skill</h2>
+      <p class="section-subtitle">expertise in modern web technologies<br>and design tools, constantin learning<br>and evolving</p>
+      
+      <div class="skill-card">
+        <div class="row g-4 justify-content-center">
+          
+          <div class="col-md-4 col-sm-6">
+            <div class="skill-item">
+              <div class="skill-header">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+                <span class="skill-name">HTML</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-bar" data-progress="70"></div>
+                <span class="progress-text">70%</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="col-md-4 col-sm-6">
-          <div class="skill-item">
-            <div class="skill-header">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
-              <span class="skill-name">Figma</span>
-            </div>
-            <div class="skill-progress">
-              <div class="skill-bar" data-progress="80"></div>
-              <span class="progress-text">80%</span>
+          <div class="col-md-4 col-sm-6">
+            <div class="skill-item">
+              <div class="skill-header">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS">
+                <span class="skill-name">Javascript</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-bar" data-progress="20"></div>
+                <span class="progress-text">20%</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="col-md-4 col-sm-6">
-          <div class="skill-item">
-            <div class="skill-header">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
-              <span class="skill-name">CSS</span>
-            </div>
-            <div class="skill-progress">
-              <div class="skill-bar" data-progress="60"></div>
-              <span class="progress-text">60%</span>
+          <div class="col-md-4 col-sm-6">
+            <div class="skill-item">
+              <div class="skill-header">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+                <span class="skill-name">Figma</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-bar" data-progress="80"></div>
+                <span class="progress-text">80%</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="col-md-4 col-sm-6">
-          <div class="skill-item">
-            <div class="skill-header">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
-              <span class="skill-name">Bootstrap</span>
-            </div>
-            <div class="skill-progress">
-              <div class="skill-bar" data-progress="50"></div>
-              <span class="progress-text">50%</span>
+          <div class="col-md-4 col-sm-6">
+            <div class="skill-item">
+              <div class="skill-header">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+                <span class="skill-name">CSS</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-bar" data-progress="60"></div>
+                <span class="progress-text">60%</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="col-md-4 col-sm-6">
-          <div class="skill-item">
-            <div class="skill-header">
-              <i class="bi bi-code-slash"></i>
-              <span class="skill-name">Coding</span>
-            </div>
-            <div class="skill-progress">
-              <div class="skill-bar" data-progress="60"></div>
-              <span class="progress-text">60%</span>
+          <div class="col-md-4 col-sm-6">
+            <div class="skill-item">
+              <div class="skill-header">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
+                <span class="skill-name">Bootstrap</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-bar" data-progress="50"></div>
+                <span class="progress-text">50%</span>
+              </div>
             </div>
           </div>
-        </div>
 
+          <div class="col-md-4 col-sm-6">
+            <div class="skill-item">
+              <div class="skill-header">
+                <i class="bi bi-code-slash"></i>
+                <span class="skill-name">Coding</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-bar" data-progress="60"></div>
+                <span class="progress-text">60%</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- PROJECT -->
   <section class="project-section" id="project">
@@ -209,7 +211,7 @@
             <img src="project 1.jpg" alt="Project 1">
           </div>
           <div class="project-body">
-            <h6 class="project-title">ptoject 1</h6>
+            <h6 class="project-title">Project 1</h6>
             <p class="project-desc">This project is a collaborative effort focused on processing and managing waste.</p>
           </div>
         </a>
@@ -219,7 +221,7 @@
             <img src="project 2.jpg" alt="Project 2">
           </div>
           <div class="project-body">
-            <h6 class="project-title">project 2</h6>
+            <h6 class="project-title">Project 2</h6>
             <p class="project-desc">School assignment designed to develop students' research and creative skills.</p>
           </div>
         </a>
@@ -229,7 +231,7 @@
             <img src="project 3.jpg" alt="Project 3">
           </div>
           <div class="project-body">
-            <h6 class="project-title">project 3</h6>
+            <h6 class="project-title">Project 3</h6>
             <p class="project-desc">Focuses on protecting and caring for the environment through simple actions.</p>
           </div>
         </a>
@@ -239,7 +241,7 @@
             <img src="project 4.jpg" alt="Project 4">
           </div>
           <div class="project-body">
-            <h6 class="project-title">project 4</h6>
+            <h6 class="project-title">Project 4</h6>
             <p class="project-desc">Web Doctor provides basic health information for common illnesses.</p>
           </div>
         </a>
@@ -249,7 +251,7 @@
             <img src="project 5.jpg" alt="Project 5">
           </div>
           <div class="project-body">
-            <h6 class="project-title">ptoject 5</h6>
+            <h6 class="project-title">Project 5</h6>
             <p class="project-desc">Technology-based marketplace for browsing and purchasing gadgets.</p>
           </div>
         </a>
@@ -287,7 +289,7 @@
                 <div class="col-md-6"><input type="tel" class="contact-input" placeholder="Phone" required></div>
                 <div class="col-md-6"><input type="text" class="contact-input" placeholder="Subject" required></div>
                 <div class="col-12"><input type="email" class="contact-input" placeholder="Email" required></div>
-                <div class="col-12"><textarea class="contact-input contact-textarea" placeholder="Massage" rows="4" required></textarea></div>
+                <div class="col-12"><textarea class="contact-input contact-textarea" placeholder="Message" rows="4" required></textarea></div>
                 <div class="col-12"><button type="submit" class="btn-submit">Submit</button></div>
               </div>
             </form>
@@ -308,9 +310,9 @@
 
         <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
           <ul class="footer-links">
-           <li><a href="#home"><h2>Home</h5></a></li>
-            <li><a href="#about"><h4>About</h4></a></li>
-            <li><a href="#skill"><h5>Skill</h5></a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skill">Skill</a></li>
             <li><a href="#project">Project</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -334,14 +336,16 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>Copywrite 2024 All Rights Reserved By Anaaaaa.</p>
+        <p>Copyright 2024 All Rights Reserved By Anaaaaa.</p>
       </div>
     </div>
   </footer>
-<!-- Back to Top Button -->
-<button id="backToTop" class="back-to-top">
-  <i class="bi bi-arrow-up"></i>
-</button>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
